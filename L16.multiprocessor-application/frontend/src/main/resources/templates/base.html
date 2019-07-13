@@ -1,0 +1,30 @@
+<#macro title>
+Title
+</#macro>
+
+<#macro content>
+</#macro>
+
+
+<#macro display_page>
+    <!DOCTYPE html>
+
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title><@title/></title>
+    </head>
+
+    <body>
+        <div class="container">
+            <@content/>
+        </div>
+
+        <div class="nav">
+            <@menu/>
+        </div>
+
+    </body>
+    </html>
+
+</#macro>

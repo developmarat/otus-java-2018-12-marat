@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+		 http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+
+    <display-name>Dependency injection</display-name>
+    <description>HW 15</description>
+
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:config/appContext.xml</param-value>
+    </context-param>
+
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
+
+    <servlet>
+        <servlet-name>adminServlet</servlet-name>
+        <servlet-class>develop.marat.server.servlets.AdminServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>loginServlet</servlet-name>
+        <servlet-class>develop.marat.server.servlets.LoginServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>usersListServlet</servlet-name>
+        <servlet-class>develop.marat.server.servlets.UsersListServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>usersGetByIdServlet</servlet-name>
+        <servlet-class>develop.marat.server.servlets.UsersGetByIdServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>usersCountServlet</servlet-name>
+        <servlet-class>develop.marat.server.servlets.UsersCountServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>usersAdd</servlet-name>
+        <servlet-class>develop.marat.server.servlets.UsersAdd</servlet-class>
+    </servlet>
+
+
+    <servlet-mapping>
+        <servlet-name>adminServlet</servlet-name>
+        <url-pattern>/admin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>loginServlet</servlet-name>
+        <url-pattern>/admin/login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>usersListServlet</servlet-name>
+        <url-pattern>/admin/users</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>usersGetByIdServlet</servlet-name>
+        <url-pattern>/admin/users/get_by_id</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>usersCountServlet</servlet-name>
+        <url-pattern>/admin/users/count</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>usersAdd</servlet-name>
+        <url-pattern>/admin/users/add</url-pattern>
+    </servlet-mapping>
+
+
+    <filter>
+        <filter-name>adminFilter</filter-name>
+        <filter-class>develop.marat.server.filters.AdminFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>adminFilter</filter-name>
+        <url-pattern>/admin/users/*</url-pattern>
+    </filter-mapping>
+
+
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+
+</web-app>
+

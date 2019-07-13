@@ -1,0 +1,26 @@
+<#include "base.html">
+
+<#macro title>
+    User ${user.name}
+</#macro>
+
+<#macro content>
+    <h1>${user.id}. ${user.name}</h1>
+    <span>login: ${user.login}</span> <br/>
+    <span>age: ${user.age}</span> <br/>
+    <span>address: ${user.address}</span> <br/>
+    <span>phones:</span> <br/>
+    <ul>
+        <#list user.phones as phone>
+            <li>${phone}</li>
+        </#list>
+    </ul>
+</#macro>
+
+<#macro menu>
+    <a href="/admin/users/get_by_id">Find new user</a> <br/>
+    <@menu_item_main_menu/>
+</#macro>
+
+
+<@display_page/>

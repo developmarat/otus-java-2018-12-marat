@@ -1,0 +1,19 @@
+<#include "base.html">
+
+<#macro title>
+    Users
+</#macro>
+
+<#macro content>
+    <ul>
+        <#list users as user>
+            <li>${user.id}. ${user.name}</li>
+        </#list>
+    </ul>
+</#macro>
+
+<#macro menu>
+    <a href="../admin">Main menu</a><br/>
+</#macro>
+
+<@display_page/>

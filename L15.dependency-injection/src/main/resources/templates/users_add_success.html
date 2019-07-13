@@ -1,0 +1,16 @@
+<#include "base.html">
+
+<#macro title>
+    User successfully added
+</#macro>
+
+<#macro content>
+    <h1>User successfully added!</h1>
+</#macro>
+
+<#macro menu>
+    <a href="<@site_home_dir/>/admin/users/add">Add more</a><br/>
+    <@menu_item_main_menu/>
+</#macro>
+
+<@display_page/>

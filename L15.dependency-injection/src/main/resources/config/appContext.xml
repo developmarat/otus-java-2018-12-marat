@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="hibernateConfiguration" class="develop.marat.db.helpers.HibernateHelper"
+            factory-method="getConfiguration"
+        >
+        <constructor-arg value="config/hibernate.cfg.xml"/>
+    </bean>
+
+    <bean id="dbService" class="develop.marat.db.services.DBServiceHibernateImpl">
+        <constructor-arg ref="hibernateConfiguration"/>
+    </bean>
+
+    <bean id="usersService" class="develop.marat.db.services.UsersServiceImpl"
+            init-method="init"
+        >
+        <constructor-arg ref="dbService"/>
+    </bean>
+
+    <bean id="templateProcessor" class="develop.marat.server.template.TemplateProcessorImpl">
+    </bean>
+
+    <bean id="messageSystemService" class="develop.marat.ms.services.MessageSystemService"
+            init-method="start" destroy-method="dispose"
+        >
+        <constructor-arg ref="usersService"/>
+        <constructor-arg ref="templateProcessor"/>
+    </bean>
+
+
+</beans>

@@ -1,0 +1,22 @@
+<#include "base.html">
+
+<#macro title>
+    Login
+</#macro>
+
+<#macro content>
+    <form action="" method="post">
+        Login:<br>
+        <input type="text" name="login" value="admin"><br>
+        Password:<br>
+        <input type="password" name="password" value="pass"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+</#macro>
+
+
+<#macro menu>
+    <a href="../admin">Main menu</a><br/>
+</#macro>
+
+<@display_page/>

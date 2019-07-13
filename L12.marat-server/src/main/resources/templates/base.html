@@ -1,0 +1,36 @@
+<#macro title>
+Title
+</#macro>
+
+<#macro content>
+</#macro>
+
+<#macro menu_item_main_menu>
+    <a href="/admin">Main menu</a><br/>
+</#macro>
+
+<#macro menu>
+    <@menu_item_main_menu/>
+</#macro>
+
+<#macro display_page>
+
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title><@title/></title>
+    </head>
+
+    <body>
+        <div class="container">
+            <@content/>
+        </div>
+
+        <div class="nav">
+            <@menu/>
+        </div>
+
+    </body>
+    </html>
+
+</#macro>
