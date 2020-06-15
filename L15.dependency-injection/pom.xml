@@ -21,7 +21,7 @@
         <jaxb-api.version>2.3.0</jaxb-api.version>
         <jetty.version>9.4.17.v20190418</jetty.version>
         <freemarker.version>2.3.28</freemarker.version>
-        <spring.version>5.0.8.RELEASE</spring.version>
+        <spring.version>5.2.7.RELEASE</spring.version>
     </properties>
 
     <dependencies>
