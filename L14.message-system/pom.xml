@@ -17,7 +17,7 @@
         <javax.validation.vesion>2.0.0.Final</javax.validation.vesion>
         <hibernate-core.version>5.4.2.Final</hibernate-core.version>
         <jaxb-api.version>2.3.0</jaxb-api.version>
-        <jetty.version>9.4.17.v20190418</jetty.version>
+        <jetty.version>9.4.41.v20210516</jetty.version>
         <freemarker.version>2.3.28</freemarker.version>
 
     </properties>
